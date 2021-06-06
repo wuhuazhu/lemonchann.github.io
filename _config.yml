@@ -63,8 +63,8 @@ disqus: # fromendworld
 
 # Gitalk
 gitalk:
-  clientID: bd65d5c0df878155b7fa
-  clientSecret: d0220762c05c2d6b6f6152a0f0e4b6b090de9729
+  clientID: 826d99e488add02639ee
+  clientSecret: 8d2ff269af6c84c20a261cced4b9688bc8bbb5b9
   repo: wuhuazhu.github.io
   owner: wuhuazhu
 
