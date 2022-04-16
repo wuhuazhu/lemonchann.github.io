@@ -1,0 +1,76 @@
+C++知识学习
+
+字符串相关
+两种字符串方法
+1.C-
+字符串以空字符'\0'结尾，ASCII为0；
+char name[5] = {'k','i','t','t','y'};//输出后会带乱码
+char name[6] = {'k','i','t','t','y','\0'};
+
+char name[16] = {"hello kitty"};
+char name[] = {"Dennel"};
+char name[] = "hello";
+如果初始化时使用了定值char[5],那么注意不要超出定值大小
+拷贝"kiit"可以,但是"kitty"不行。
+2.string类
+需要包含string
+初始化
+string str = {'h','e','l','l','o'};
+string str = "hello world";
+string str = {"hello world"};
+string str {"hello world"};
+string可以直接赋值
+运算符+可以合并字符串
+
+结构体初始化
+struct student stu;
+student stu;
+student stu = {};//直接初始化值
+
+结构体数组
+student stu[20];
+
+共用体(联合体)
+长度为最大成员长度
+union one4All
+{
+	char char_val;
+	short short_val;
+	int int_val;
+	double double_val;
+}；
+
+
+const用法
+const + 数据类型 + 符号常量名 = 常量值;
+enum 可以代替以上用法
+enum 枚举名 {
+	枚举量1,
+	枚举量2,
+	...
+};
+可以将枚举量赋给枚举变量，但是不能将int常量赋给枚举变量.
+enum colors
+{
+	yellow;
+	green;
+	red;
+}
+colors colo;
+colo = red;
+或者进行强制类型转换
+colo = colors(2);
+枚举量可提升为int,但是int不能自动转换为枚举量;
+int curnum = red;
+可以创建多个值相同的枚举量
+enum colors{first, second = 0; third}；
+强制转换可以赋给取值范围中整型值给枚举变量，即使这个值不是枚举值
+enum colors{first = 1, second = 2; third = 6}；
+colors col = colors(4);
+
+范围上限为最大值的, 最小的2次幂-1；
+如最大值为101，那么上限为2的7次，128-1=127；
+下限根据枚举值的最小值判定，如果最小值为0，那么下限为0；
+不然下限为小于他，最大的2次幂+1
+如-6，那么下限为-8+1 = -7;
+
